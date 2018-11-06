@@ -91,6 +91,7 @@ Collection: courses
     "teacherType": "common",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6b56dac4604e4af91a6"
@@ -103,6 +104,7 @@ Collection: courses
     "teacherType": "admin",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6c26dac4604e4af91a7"
@@ -115,6 +117,7 @@ Collection: courses
     "teacherType": "admin",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6cc6dac4604e4af91a8"
@@ -127,6 +130,7 @@ Collection: courses
     "teacherType": "common",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6d86dac4604e4af91a9"
@@ -139,6 +143,7 @@ Collection: courses
     "teacherType": "admin",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6e26dac4604e4af91aa"
@@ -151,6 +156,7 @@ Collection: courses
     "teacherType": "common",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6ed6dac4604e4af91ab"
@@ -163,6 +169,7 @@ Collection: courses
     "teacherType": "admin",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb6f66dac4604e4af91ac"
@@ -187,6 +194,7 @@ Collection: student
     "major": "Software Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8cd6dac4604e4af91b7"
@@ -197,6 +205,7 @@ Collection: student
     "major": "Software Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8d76dac4604e4af91b8"
@@ -207,6 +216,7 @@ Collection: student
     "major": "Communication Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8e06dac4604e4af91b9"
@@ -217,6 +227,7 @@ Collection: student
     "major": "Software Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8eb6dac4604e4af91ba"
@@ -227,6 +238,7 @@ Collection: student
     "major": "Communication Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8f56dac4604e4af91bb"
@@ -237,6 +249,7 @@ Collection: student
     "major": "English Learning",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8fe6dac4604e4af91bc"
@@ -247,6 +260,7 @@ Collection: student
     "major": "Mathmatical Formatting",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb9076dac4604e4af91bd"
@@ -270,6 +284,7 @@ Collection: teacher
     "departmentMajor": "Software Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8586dac4604e4af91af"
@@ -281,6 +296,7 @@ Collection: teacher
     "departmentMajor": "Software Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb86c6dac4604e4af91b0"
@@ -292,6 +308,7 @@ Collection: teacher
     "departmentMajor": "Communication Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8776dac4604e4af91b1"
@@ -303,6 +320,7 @@ Collection: teacher
     "departmentMajor": "Software Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8886dac4604e4af91b2"
@@ -314,6 +332,7 @@ Collection: teacher
     "departmentMajor": "Communication Engineering",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8926dac4604e4af91b3"
@@ -325,6 +344,7 @@ Collection: teacher
     "departmentMajor": "English Learning",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8a26dac4604e4af91b4"
@@ -336,6 +356,7 @@ Collection: teacher
     "departmentMajor": "Mathmatical Formatting",
     "__v": 0
 }
+
 {
     "_id": {
         "$oid": "5bddb8af6dac4604e4af91b5"
@@ -502,8 +523,11 @@ In this section include a listing of the output from running your tests
 
 I have done these in my test shown as below:
 1. Git -  log shows coherent, sustained progress ; Use gitignore policy.
+
 2. Testing – 3 REST resources (3 test files); Clear test cases (it block specifications); Before/After hooks; Some exception testing.
+
 3. Git – Branch-Edit-Merge workflow; 
+
 4. Commit ‘work units’; 
    $F:\Agile Software Practice\coursestest>git rebase -i af9dfe77c98512fe37cdf931d91b0c96cbe98099
      [detached HEAD 7195e0e] courses-testing
@@ -511,6 +535,7 @@ I have done these in my test shown as below:
      2 files changed, 51 insertions(+), 33 deletions(-)
      Successfully rebased and updated refs/heads/master.
    $
+   
 5. Rollback;
    When I tested teacher-test, I found somgthing wrong, then I use git-reset to return to the latest correct commit.
    Also , I commit "test rollback" ,then: 
@@ -521,19 +546,24 @@ I have done these in my test shown as below:
    After checking out the remote repository, we can first use git revert and then push as usual:
      $ git revert d762695a187e2507517eea55ab560dfe6403b299
        git push origin
+       
 6. Testing – Test code structure (nested describe blocks); 
+
 7. Database integration;
    To connect the database to the Express application, simply load the appropriate Node. JS driver for the database in the application.
       var mongodbUri ='mongodb://test:dreammj01@ds151453.mlab.com:51453/testcourses';
       mongoose.connect(mongodbUri,{ useNewUrlParser: true });
+      
 8. Git –  Excellent practice;
    git init , git status , git add , git commit -m , git log , git push , git log -p , git diff , git diff HEAD , git branch , git checkout -b , git pull 
    git checkout , git checkout - , git checkout master , git marge , git log --graph , git reset , git reset --hrash , git reflog , git rebase -i
+   
 9. Exception and (meaningful) Boundary cases;
    For the model "courses",there are two arrtibutes 
        classHours at the interval of[20,42] ,  studentNumbers at the interval of[25,60]
    The boundary cases are:
        <33,25> , <33,26> , <33,24> , <33,59> , <33,60> , <33,61> , <19,18> , <20,18> , <21,18> , <41,18> , <42,18> , <43,18> 
+       
 10. Testing – Authentication;
    You can find these at : GET /courses/:id
                           PUT /coursesCertain/:id/:teacherName/CHour
