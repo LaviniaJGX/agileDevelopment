@@ -40,7 +40,7 @@ describe('Courses', function (){
     describe('GET /courses/:id',  () => {
          it('should return message authentication not enough', function(done) {
               chai.request(server)
-              .get('/courses/5bddb6a96dac4604e4af91a5')
+              .get('/courses/5c0d4088be3d8d30d8b31bc6')
               .end(function(err, res) {
                    expect(res).to.have.status(200);
                    expect(res.body).to.equal('You are not the administrant ! You can not see all courses!' ) ;
@@ -49,7 +49,7 @@ describe('Courses', function (){
          });
          it('should return the course with the certain ID', function(done) {
               chai.request(server)
-              .get('/courses/5bddb6b56dac4604e4af91a6')
+              .get('/courses/5c0d40ebbe3d8d30d8b31bc7')
 		      .end(function(err, res) {
                    expect(res).to.have.status(200);
                    expect(res.body).to.be.a('array');
