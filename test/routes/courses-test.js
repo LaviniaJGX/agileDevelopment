@@ -205,7 +205,7 @@ describe('Courses', function (){
                         classHours: 20, 
                    };
                    chai.request(server)
-                   .put('/coursesCertain/5bddb6b56dac4604e4af91a6/David/CHour')
+                   .put('/coursesCertain/5c0d40ebbe3d8d30d8b31bc7/David/CHour')
 				   .send(course)
                    .end(function(err, res) {
                         expect(res).to.have.status(200);
@@ -232,7 +232,7 @@ describe('Courses', function (){
                         classHours: 40,  
                    };
 				   chai.request(server)
-                   .put('/coursesCertain/5bddb6b56dac4604e4af91a6/David/CHour')
+                   .put('/coursesCertain/5c0d40ebbe3d8d30d8b31bc7/David/CHour')
 				   .send(course)
                    .end(function(err, res) {
                         done();
@@ -254,7 +254,7 @@ describe('Courses', function (){
          describe('when authentication not enough',function(){
 		      it('should return message authentication not enough', function(done) {
                    chai.request(server)
-                   .put('/coursesCertain/5bddb6f66dac4604e4af91ac/Anease/CHour')
+                   .put('/coursesCertain/5c0d41aebe3d8d30d8b31bcb/Anease/CHour')
                    .end(function(err, res) {
                         expect(res).to.have.status(200);
                         done();
@@ -270,7 +270,7 @@ describe('Courses', function (){
 			            studentNumbers:20,
                    };
                    chai.request(server)
-                   .put('/coursesCerNum/5bddb6b56dac4604e4af91a6/David/CNum')
+                   .put('/coursesCerNum/5c0d40ebbe3d8d30d8b31bc7/David/CNum')
 			       .send(course)
                    .end(function(err, res) {
                         expect(res).to.have.status(200);
@@ -297,7 +297,7 @@ describe('Courses', function (){
                         studentNumbers:40,  
                    };
 				   chai.request(server)
-                   .put('/coursesCerNum/5bddb6b56dac4604e4af91a6/David/CNum')
+                   .put('/coursesCerNum/5c0d40ebbe3d8d30d8b31bc7/David/CNum')
 				   .send(course)
                    .end(function(err, res) {
                         done();
@@ -318,7 +318,7 @@ describe('Courses', function (){
 		 describe('when authentication not enough',function(){
 		      it('should return message authentication not enough', function(done) {
                    chai.request(server)
-                   .put('/coursesCerNum/5bddb6f66dac4604e4af91ac/Anease/CNum')
+                   .put('/coursesCerNum/5c0d41aebe3d8d30d8b31bcb/Anease/CNum')
                    .end(function(err, res) {
                         expect(res).to.have.status(200);
                         done();
@@ -334,7 +334,7 @@ describe('Courses', function (){
 				        teacherName:"Willian",
                    };
                    chai.request(server)
-                   .put('/courses/5bddb6b56dac4604e4af91a6/David/Teacher')
+                   .put('/courses/5c0d40ebbe3d8d30d8b31bc7/David/Teacher')
 			       .send(course)
                    .end(function(err, res) {
                         expect(res).to.have.status(200);
@@ -361,7 +361,7 @@ describe('Courses', function (){
                         teacherName:"David", 
                    };
 				   chai.request(server)
-                   .put('/courses/5bddb6b56dac4604e4af91a6/Willian/Teacher')
+                   .put('/courses/5c0d40ebbe3d8d30d8b31bc7/Willian/Teacher')
 				   .send(course)
                    .end(function(err, res) {
                         done();
@@ -382,7 +382,7 @@ describe('Courses', function (){
 		 describe('when authentication not enough',function(){
 		      it('should return message authentication not enough', function(done) {
                    chai.request(server)
-                   .put('/courses/5bddb6f66dac4604e4af91ac/Anease/Teacher')
+                   .put('/courses/5c0d41aebe3d8d30d8b31bcb/Anease/Teacher')
                    .end(function(err, res) {
                         expect(res).to.have.status(200);
                         done();
