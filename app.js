@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-console.log('testss')
+var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -12,7 +12,6 @@ const teacher = require("./routes/teacher");
 const student = require("./routes/student");
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,12 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // cross origin
-app.all('*', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With,Content-Type"); //预检请求使用
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS"); //预检请求使用
-    next();
-});
+app.use(cors())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
