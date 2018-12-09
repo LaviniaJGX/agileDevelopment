@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2 restart pm2.json",
+    "start": "node ./bin/www",
     "test": "set NODE_ENV=test && mocha test/routes/courses-test.js",
     "restart": "pm2 restart pm2.json",
     "stop": "pm2 stop pm2.json"
