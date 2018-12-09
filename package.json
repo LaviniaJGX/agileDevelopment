@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "set NODE_ENV=test && mocha test/routes/courses-test.js",
+    "test": "set NODE_ENV=test && mocha --timeout 6000 test/routes/courses-test.js",
     "stop": "pm2 stop pm2.json",
     "supervisor": "supervisor ./bin/www"
   },
