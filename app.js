@@ -22,7 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+// cross origin
+app.all('*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With,Content-Type"); //预检请求使用
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS"); //预检请求使用
+    next();
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
