@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+// console.log('test')
 const courses = require("./routes/courses");
 const teacher = require("./routes/teacher");
 const student = require("./routes/student");
