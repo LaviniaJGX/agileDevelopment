@@ -8,10 +8,16 @@ script:
 - npm run coverage
 after_success:
 - npm run publish-coverage
+notifications:
+  email:
+    recipients:
+    - 840762603@qq.com
+    on_success: never
+    on_failure: always
 deploy:
   provider: heroku
   api_key:
     secure: OnRW02JM3Vx/LZkavF11vvxTOhAu31C2cHa64yozyWUYKgVYp4qA8dfVYHw9F48x+o68Bu/2h+LBssz5WZrqgrwVcnJkKpMzx7CmPyL1AT3kqfurzPl1T37doWrJ4VmyXV6FouIytK7BpEqeFRdfGP9Ec3Nddu35BpxTkKcXQGIkntKMFbRpVa25yzIH33Ry3n7BNrqnGmg+HHV08bhxP2bCkkUh/8dUdEzC6JiVxQQsvxg0aDcPLwy+e4j3+hrTMZpFHBIVxZvyL4TupuaXF23T4gEYm/ygkpPntLmOXUOK7Niu/0cyEEOsPKIOWWUhNPhqC1f+ym9BxLdovFk070uAcSrasWj07kfEaKK5xV+MONPbbydBtC74siNzk4NwgLc4aTorMLUUNmfcsUgZix3k2/PM8ZrtczWWxhdt/FwpujYBnbKvEHTRDW0hqhqhJSS17/OOcONsI5zIff4Reas6YqpFlIbnfB07i3MXfQXw1KRF/9/YW2YRkeyL+jAg3dYVTx9VAEVtWaFS4ed5CGqxkRpgmRqrcRDErQRrC0RHfcAZe2WaBr0RYGqOzcuISyyh1G/nfydlj3g4t/9eoGkem7U3PUhNH2pqVWSnRJSMiXfoepOnkdz8Uhf5VlY/Mkq3Kw8XpnB3hA5XzuX34iE2s5oZKagKfSrbkuTnpF0=
-  on: 
+  on:
     branch: v1.0.0
   app: vuecoursestest
