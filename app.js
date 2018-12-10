@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 const courses = require("./routes/courses");
 const teacher = require("./routes/teacher");
 const student = require("./routes/student");
-
+const users = require("./routes/users")
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,8 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // cross origin
 app.use(cors())
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
+
+
+// user Router
+app.get('/user/:account', users.findByAccount)
+app.post('/user', users.addUser)
 // Our Courses Web App Routes
 app.get('/courses', courses.findAll);
 app.get('/courses/:id', courses.findById);

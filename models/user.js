@@ -1,14 +1,10 @@
 let mongoose = require('mongoose');
 
 let UserSchema = new mongoose.Schema({
-    courseTitle: String,
-    classHours: Number,
-    studentNumbers: Number,
-    studentCategory: String,
-    teacherName: String,
-    teacherType: String
+    account:String,
+    role:Number
 }, {
-    collection: 'courses'
+    collection: 'users'
 });
 
 module.exports = mongoose.model('User', UserSchema);
