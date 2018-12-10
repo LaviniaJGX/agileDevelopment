@@ -1,21 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let mongoose = require('mongoose');
-let teacher = require('../models/teacher');
 var Teacher = require('../models/teacher');
-
-var mongodbUri ='mongodb://test:dreammj01@ds151453.mlab.com:51453/testcourses';
-mongoose.connect(mongodbUri,{ useNewUrlParser: true });
-
-let db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
-});
-
-db.once('open', function () {
-    console.log('Successfully Connected to [ ' + db.name + ' ]');
-});
 
 //find all teachers
 router.findAll = (req, res) => {
