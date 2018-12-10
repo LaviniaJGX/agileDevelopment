@@ -4,6 +4,7 @@ var User = require('../models/user')
 /* GET users listing. */
 router.addUser = function (req,res){
   res.setHeader('Content-Type', 'application/json');
+  // console.log(req.body)
   if(req.body.account&&req.body.role){
     /**
      * role:
