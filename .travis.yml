@@ -14,5 +14,5 @@ deploy:
   on: 
     repo: LaviniaJGX/coursestest
   app:
-    endend
+    vuecoursestest
   
