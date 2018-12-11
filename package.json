@@ -18,7 +18,7 @@
     "lint": "esw  ./test ./routes ./models/ app.js",
     "lint:watch": "npm run lint -- --watch",
     "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
-    "coverage": "cross-env NODE_ENV=test PORT=4000 nyc  --reporter=text mocha --timeout 600000 test/routes/courses-test.js",
+    "coverage": "cross-env NODE_ENV=test PORT=4000 nyc  --reporter=text mocha --timeout 600000 test/routes/teacher-test.js",
     "publish-coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
