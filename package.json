@@ -3,10 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "set NODE_ENV=test && mocha --timeout 600000 test/routes/courses-test.js",
-    "stop": "pm2 stop pm2.json",
-    "supervisor": "supervisor ./bin/www"
+    "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
+    "start": "npm-run-all test build server",
+    "test": "npm-run-all test_courses test_teacher test_student",
+    "test_courses": "cross-env NODE_ENV=test mocha --timeout 600000 test/routes/courses-test.js",
+    "test_teacher": "cross-env NODE_ENV=test mocha --timeout 600000 test/routes/teacher-test.js",
+    "test_student": "cross-env NODE_ENV=test mocha --timeout 600000 test/routes/student-test.js",
+    "clean": "rimraf ./lib && mkdir lib",
+    "supervisor": "supervisor ./bin/www",
+    "postbuild": "npm run server",
+    "prebuild": "npm-run-all test clean",
+    "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
+    "test:watch": "npm run test -- --watch",
+    "lint": "esw  ./test ./routes ./models/ app.js",
+    "lint:watch": "npm run lint -- --watch",
+    "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
+    "coverage": "cross-env NODE_ENV=test PORT=4000 nyc  --reporter=text mocha --timeout 600000 test/routes/courses-test.js",
+    "publish-coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -21,9 +34,22 @@
     "pm2": "^3.2.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "chai-things": "^0.2.0",
-    "mocha": "^3.4.2"
+    "coveralls": "^2.13.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-json": "^1.3.2",
+    "eslint-watch": "^4.0.2",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.18.7",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^13.1.0",
+    "rimraf": "^2.6.2"
   }
 }

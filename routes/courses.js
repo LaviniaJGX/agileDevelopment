@@ -1,24 +1,10 @@
-let courses = require('../models/courses');
 let express = require('express');
 let router = express.Router();
-let mongoose = require('mongoose');
 var Course = require('../models/courses');
-
-var mongodbUri ='mongodb://test:dreammj01@ds151453.mlab.com:51453/testcourses';
-mongoose.connect(mongodbUri,{ useNewUrlParser: true });
-
-let db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
-});
-
-db.once('open', function () {
-    console.log('Successfully Connected to [ ' + db.name + ' ]');
-});
 
 //find all courses in database
 router.findAll = (req, res) => {
+    console.log('re')
     // Return a JSON representation of our list
     res.setHeader('Content-Type', 'application/json');
     Course.find(function (err, courses) {
