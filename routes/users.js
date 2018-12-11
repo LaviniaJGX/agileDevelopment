@@ -32,6 +32,7 @@ router.addUser = function (req,res){
 
 
 router.findByAccount = function (req,res){
+  console.log(req.params)
   User.find({ "account":req.params.account},function (err, user){
     if (err) {
       res.status(404);

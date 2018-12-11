@@ -4,6 +4,7 @@ var Course = require('../models/courses');
 
 //find all courses in database
 router.findAll = (req, res) => {
+    console.log('re')
     // Return a JSON representation of our list
     res.setHeader('Content-Type', 'application/json');
     Course.find(function (err, courses) {

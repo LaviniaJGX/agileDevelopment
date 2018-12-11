@@ -4,9 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
-const db = require('./mongodb')
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 // console.log('test')
 const courses = require("./routes/courses");
 const teacher = require("./routes/teacher");
