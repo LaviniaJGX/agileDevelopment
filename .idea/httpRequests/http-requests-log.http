@@ -1,3 +1,14 @@
+POST http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"courseTitle":"Computer Networks ","classHours":35,"studentNumbers":45,"studentCategory":"postgraduate","teacherName":"Amanda","teacherType":"admin" }
+
+<> 2018-12-11T044302.200.json
+
+###
+
 GET http://localhost:3000/courses
 Accept: */*
 Cache-Control: no-cache
